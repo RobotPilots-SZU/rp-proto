@@ -1,0 +1,32 @@
+name: Protocol Lint CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'proto/**'
+      - '**.nix'
+      - 'flake.lock'
+      - 'buf.yaml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'proto/**'
+      - '**.nix'
+      - 'flake.lock'
+      - 'buf.yaml'
+
+jobs:
+  nix-flake-check:
+    name: Run Nix Flake Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v4
+
+      - name: Execute Flake Check
+        run: nix flake check
