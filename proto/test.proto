@@ -1,6 +1,9 @@
-syntax "proto3";
+syntax = "proto3";
+
+package robotpilots;
 
 // 测试消息, 仅仅占位, 无实际用途
 message DummyMsg {
+  //是否正常
   bool ok = 1;
-};
+}
