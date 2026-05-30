@@ -1,0 +1,6 @@
+syntax "proto3";
+
+// 测试消息, 仅仅占位, 无实际用途
+message DummyMsg {
+  bool ok = 1;
+};
