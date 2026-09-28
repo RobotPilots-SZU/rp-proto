@@ -1,0 +1,6 @@
+# protobuf
+/generated
+
+# nix
+.direnv
+result
