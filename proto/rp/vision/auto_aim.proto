@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package rp.vision;
+
+import "rp/common/id.proto";
+
+// 自瞄目标类型
+message AutoAimTarget {
+  oneof target {
+    // 场地目标类型
+    rp.common.FieldUnitType field_unit = 1;
+    // 机器人类型
+    rp.common.RobotId robot = 2;
+  }
+}

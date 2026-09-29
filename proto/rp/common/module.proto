@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package rp.common;
+
+// 模块状态
+enum ModuleState {
+  // 未指定(无效值)
+  MODULE_STATE_UNSPECIFIED = 0;
+  // 关闭/离线
+  MODULE_STATE_OFFLINE = 1;
+  // 在线
+  MODULE_STATE_ONLINE = 2;
+}
+
+// 模块类型(非常广义的模块类型, 只要是装在车上面的都能算)
+enum ModuleType {
+  // 未指定(无效值)
+  MODULE_TYPE_UNSPECIFIED = 0;
+  // 自瞄模块
+  MODULE_TYPE_AUTO_AIM = 11;
+}
+
+// 单个模块信息
+message ModuleInfo {
+  // 模块类型
+  ModuleType type = 1;
+  // 模块编号(仅同类型多模块使用, 比如摩擦轮1,2,3)
+  optional uint32 idx = 2;
+  // 模块状态
+  ModuleState state = 3;
+}
+
+// 所有模块信息报告
+message ModuleReport {
+  // 模块信息. 需要填入所有机器人上的模块, 无论是否在线
+  repeated ModuleInfo modules = 1;
+}

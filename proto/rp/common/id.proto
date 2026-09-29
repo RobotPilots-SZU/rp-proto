@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package rp.common;
+
+// 队伍信息(绝对表达)
+enum Team {
+  // 未指定
+  TEAM_UNSPECIFIED = 0;
+  // 红队
+  TEAM_RED = 1;
+  // 蓝队
+  TEAM_BLUE = 2;
+}
+
+// 机器人类型枚举
+enum RobotType {
+  // 未指定
+  ROBOT_TYPE_UNSPECIFIED = 0;
+
+  reserved 5,8;
+  reserved "ROBOT_TYPE_5", "ROBOT_TYPE_8";
+
+  // 1号机器人 (目前为英雄)
+  ROBOT_TYPE_1 = 1;
+  // 2号机器人 (目前为工程)
+  ROBOT_TYPE_2 = 2;
+  // 3号机器人 (目前为步兵)
+  ROBOT_TYPE_3 = 3;
+  // 4号机器人 (目前为步兵)
+  ROBOT_TYPE_4 = 4;
+  // 6号机器人 (目前为无人机)
+  ROBOT_TYPE_6 = 6;
+  // 7号机器人 (目前为哨兵)
+  ROBOT_TYPE_7 = 7;
+}
+
+// 机器人Id
+message RobotId {
+  // 队伍
+  Team team = 1;
+  // 机器人类型
+  RobotType type = 2;
+}
+
+// 场地目标类型
+enum FieldUnitType {
+  // 未指定目标(无效值)
+  FIELD_UNIT_TYPE_UNSPECIFIED = 0;
+  // 小符
+  FIELD_UNIT_TYPE_SMALL_RUNE = 1;
+  // 大符
+  FIELD_UNIT_TYPE_LARGE_RUNE = 2;
+  // 前哨
+  FIELD_UNIT_TYPE_OUTPOST = 3;
+  // 基地
+  FIELD_UNIT_TYPE_BASE = 4;
+}
