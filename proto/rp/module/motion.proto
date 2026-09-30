@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package rp.module;
+
+// 运动模式
+enum MotionMode {
+    MOTION_MODE_UNSPECIFIED = 0;
+    // 小陀螺
+    MOTION_MODE_SPIN = 1;
+    // 大陀螺
+    MOTION_MODE_HYPER_SPIN = 2;
+    // 上台阶
+    MOTION_MODE_STEP_UP = 3;
+    // 下台阶
+    MOTION_MODE_STEP_DOWN = 4;
+    // 飞坡
+    MOTION_MODE_LAUNCH = 5;
+    // 跳跃
+    MOTION_MODE_JUMP = 6;
+}
+

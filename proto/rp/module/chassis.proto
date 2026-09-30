@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package rp.module;
+
+// 底盘状态报告
+// TODO: 目前这里还是待补充状态
+// 可能会加入或者拆分的内容: yaw, pitch, roll 等等姿态, height 离地高度
+// rfid, 超电等等计划上是放在新的module
+message ChassisReport {
+  // 线速度, 单位: m/s
+  float speed = 1;
+}

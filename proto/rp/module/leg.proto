@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package rp.module;
+
+// 轮腿状态报告
+message LegReport {
+  // 腿高表示值. TODO: 单位 未定义
+  uint32 height = 1;
+  // 小腿摆角, 单位: degree. TODO: 极性 未定义
+  float small_thera = 2;
+  // 大腿摆角, 单位: degree. TODO: 极性 未定义
+  float large_thera = 3;
+}
