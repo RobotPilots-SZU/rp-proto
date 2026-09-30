@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package rp.game;
+
+import "rp/common/id.proto";
+
+/* Buff */
+
+// Buff类型枚举
+enum BuffType {
+  BUFF_TYPE_UNSPECIFIED = 0;
+  // 恢复增益
+  BUFF_TYPE_RECOVERY = 1;
+  // 冷却增益
+  BUFF_TYPE_COOLING = 2;
+  // 防御增益
+  BUFF_TYPE_DEFENSE = 3;
+  // 易伤
+  BUFF_TYPE_VULNERABILITY = 4;
+  // 攻击增益
+  BUFF_TYPE_ATTACK = 5;
+}
+
+// 单个Buff信息
+message BuffInfo {
+  // buff类型
+  BuffType type = 1;
+  // buff "强度". 具体含义参考官方通信手册里说的值. 0x0204
+  uint32 strength = 2;
+}
+
+/* 性能体系(名字怎么这么长) */
+
+// 整车性能体系 (26赛季仅英雄使用)
+enum MajorFocusType {
+  MAJOR_FOCUS_TYPE_UNSPECIFIED = 0;
+  // 近战优先
+  MAJOR_FOCUS_TYPE_MELEE = 1;
+  // 远程优先
+  MAJOR_FOCUS_TYPE_LONG_RANGE = 2;
+}
+
+// 底盘性能体系
+enum ChassisFocusType {
+  CHASSIS_FOCUS_TYPE_UNSPECIFIED = 0;
+  // 功率优先
+  CHASSIS_FOCUS_TYPE_POWER = 1;
+  // 血量优先
+  CHASSIS_FOCUS_TYPE_HEALTH = 2;
+}
+
+// 发射机构性能体系
+enum LaunchingMechanismFocusType {
+  LAUNCHING_MECHANISM_FOCUS_TYPE_UNSPECIFIED = 0;
+  // 爆发优先
+  LAUNCHING_MECHANISM_FOCUS_TYPE_BURST = 1;
+  // 冷却优先
+  LAUNCHING_MECHANISM_FOCUS_TYPE_COOLING = 2;
+}
+
+// 单个机器人状态信息
+message RobotStatusInfo {
+  reserved 10;
+  reserved "rfid";
+
+  // 机器人id
+  rp.common.RobotId id = 1;
+  // 血量
+  optional uint32 health = 2;
+  // 发弹量
+  optional uint32 ammo = 3;
+  // 热量
+  optional uint32 heat = 4;
+  // 冷却速率
+  optional uint32 cooling_rate = 5;
+  // 所有buff信息
+  repeated BuffInfo buffs = 6;
+
+  // 整车性能体系
+  optional MajorFocusType major_focus = 7;
+  // 底盘性能体系
+  optional ChassisFocusType chassis_focus = 8;
+  // 发射机构性能体系
+  optional LaunchingMechanismFocusType launching_mechanism_focus = 9;
+}
