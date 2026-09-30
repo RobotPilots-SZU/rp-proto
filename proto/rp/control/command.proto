@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package rp.control;
+
+// 无参数命令
+enum SimpleCommandType {
+  SIMPLE_COMMAND_TYPE_UNSPECIFIED = 0;
+}
+
+// 部署模式(吊射)控制
+message DeployCommand {
+  // 是否进入吊射模式
+  bool enter = 1;
+}
+
+// 单个命令请求
+message CommandRequest {
+  reserved 1;
+  reserved "request_id";
+  // 命令id
+  oneof cmd_id {
+    // 无参数命令
+    SimpleCommandType simple_cmd = 2;    
+    // 吊射命令
+    DeployCommand deploy_cmd = 3;
+  }
+}
