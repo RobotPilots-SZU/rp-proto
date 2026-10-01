@@ -4,3 +4,6 @@
 # nix
 .direnv
 result
+
+# AI Tools
+.aider*
