@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.vision;
+package rp.module;
 
 import "rp/common/id.proto";
 
