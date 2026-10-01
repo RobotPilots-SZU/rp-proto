@@ -1,14 +1,15 @@
 syntax = "proto3";
 
 package rp.toplevel;
-import "rp/common/module.proto";
+
 import "rp/common/id.proto";
+import "rp/common/module.proto";
 import "rp/control/command.proto";
+import "rp/game/robot.proto";
 import "rp/module/auto_aim.proto";
 import "rp/module/chassis.proto";
 import "rp/module/leg.proto";
 import "rp/module/motion.proto";
-import "rp/game/robot.proto";
 
 // 通用聚合消息
 message UniversalMessage {

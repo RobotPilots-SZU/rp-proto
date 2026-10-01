@@ -17,7 +17,7 @@ enum RobotType {
   // 未指定
   ROBOT_TYPE_UNSPECIFIED = 0;
 
-  reserved 5,8;
+  reserved 5, 8;
   reserved "ROBOT_TYPE_5", "ROBOT_TYPE_8";
 
   // 1号机器人 (目前为英雄)

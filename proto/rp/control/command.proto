@@ -20,7 +20,7 @@ message CommandRequest {
   // 命令id
   oneof cmd_id {
     // 无参数命令
-    SimpleCommandType simple_cmd = 2;    
+    SimpleCommandType simple_cmd = 2;
     // 吊射命令
     DeployCommand deploy_cmd = 3;
   }
