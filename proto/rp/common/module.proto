@@ -29,9 +29,3 @@ message ModuleInfo {
   // 模块状态
   ModuleState state = 3;
 }
-
-// 所有模块信息报告
-message ModuleReport {
-  // 模块信息. 需要填入所有机器人上的模块, 无论是否在线
-  repeated ModuleInfo modules = 1;
-}

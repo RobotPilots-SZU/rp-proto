@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package rp.toplevel;
+import "rp/common/module.proto";
+import "rp/common/id.proto";
+import "rp/control/command.proto";
+import "rp/module/auto_aim.proto";
+import "rp/module/chassis.proto";
+import "rp/module/leg.proto";
+import "rp/module/motion.proto";
+import "rp/game/robot.proto";
+
+// 通用聚合消息
+message UniversalMessage {
+  // 发送方机器人id
+  optional rp.common.RobotId id = 1;
+  // 模块状态报告(需要发送所有已存在的模块)
+  repeated rp.common.ModuleInfo modules = 2;
+  // 机器人命令请求
+  optional rp.control.CommandRequest command_request = 3;
+  // 底盘状态报告
+  optional rp.module.ChassisReport chassis_report = 4;
+  // 轮腿状态报告
+  optional rp.module.LegReport leg_report = 5;
+  // 运动模式
+  optional rp.module.MotionMode motion_mode = 6;
+  // 自瞄目标
+  optional rp.module.AutoAimTarget auto_aim_target = 7;
+  // 全场已知的机器人信息
+  repeated rp.game.RobotStatusInfo robot_infos = 8;
+}
