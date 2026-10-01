@@ -1,0 +1,9 @@
+version: v2
+clean: true
+managed:
+  enabled: true
+plugins:
+  - protoc_builtin: cpp
+    out: generated/cpp
+  - remote: buf.build/community/nanopb:v0.4.91
+    out: generated/nanopb

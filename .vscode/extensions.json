@@ -1,6 +1,6 @@
 {
     "recommendations": [
-        "pbkit.vscode-pbkit",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "bufbuild.vscode-buf"
     ]
 }
