@@ -6,6 +6,7 @@
         buildInputs = with pkgs; [
           protobuf
           buf
+          nanopb
         ];
       };
     };
