@@ -1,0 +1,2 @@
+robotpilots.proto.toplevel.UniversalMessage.modules max_count:20
+robotpilots.proto.toplevel.UniversalMessage.robot_infos max_count:12

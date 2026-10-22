@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package robotpilots.proto.module;
+
+import "robotpilots/proto/common/id.proto";
+
+// 自瞄目标类型
+message AutoAimTarget {
+  oneof target {
+    // 场地目标类型
+    robotpilots.proto.common.FieldUnitType field_unit = 1;
+    // 机器人类型
+    robotpilots.proto.common.RobotId robot = 2;
+  }
+}

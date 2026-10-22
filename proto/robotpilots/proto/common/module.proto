@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.common;
+package robotpilots.proto.common;
 
 // 模块状态
 enum ModuleState {

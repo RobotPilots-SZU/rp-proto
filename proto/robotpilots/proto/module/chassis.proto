@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.module;
+package robotpilots.proto.module;
 
 // 底盘状态报告
 // TODO: 目前这里还是待补充状态

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.control;
+package robotpilots.proto.control;
 
 // 无参数命令
 enum SimpleCommandType {

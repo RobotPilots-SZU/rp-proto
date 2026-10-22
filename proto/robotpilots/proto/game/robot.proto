@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package rp.game;
+package robotpilots.proto.game;
 
-import "rp/common/id.proto";
+import "robotpilots/proto/common/id.proto";
 
 /* Buff */
 
@@ -64,7 +64,7 @@ message RobotStatusInfo {
   reserved "rfid";
 
   // 机器人id
-  rp.common.RobotId id = 1;
+  robotpilots.proto.common.RobotId id = 1;
   // 血量
   optional uint32 health = 2;
   // 发弹量

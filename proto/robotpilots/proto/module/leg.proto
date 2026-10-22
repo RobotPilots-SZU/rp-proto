@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.module;
+package robotpilots.proto.module;
 
 // 轮腿状态报告
 message LegReport {

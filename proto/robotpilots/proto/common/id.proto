@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rp.common;
+package robotpilots.proto.common;
 
 // 队伍信息(绝对表达)
 enum Team {
