@@ -1,0 +1,6 @@
+name: rp-proto
+
+build:
+  cmake: zephyr
+  depends:
+    - nanopb

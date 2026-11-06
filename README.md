@@ -58,6 +58,21 @@ nix develop
 - 在这个仓库写好包管理器的声明, 在下游仓库通过包管理器引用.
 - 在这个仓库生成代码到目标下游仓库, 适合工具链原始的情况.
 
+#### Zephyr
+
+本仓库包含 Zephyr module 元数据, 可以作为 west project 加入 Zephyr 工作区. 在固件配置中启用 Nanopb:
+
+```ini
+CONFIG_NANOPB=y
+```
+
+本模块会在构建目录生成 Nanopb 源码, 并提供 `rp_proto` 库. 在应用的 `CMakeLists.txt` 中链接:
+
+```cmake
+target_link_libraries(app PRIVATE rp_proto)
+add_dependencies(app nanopb_generated_headers)
+```
+
 ### 发送(序列化)
 
 TODO
@@ -71,4 +86,3 @@ TODO
 目前包含自动化:
 
 1. 每次推送, 自动进行`lint`
-
